@@ -1,3 +1,16 @@
+
+My web at
+
+https://hpssjellis.github.io/LSTM-tensorflowjs-example/index.html
+
+
+
+
+
+
+
+
+
 # Tensorflowjs simple LSTM example
 
 Intro: This example aims to test the limitations of "in browser learning". What I learned during this little project is how difference the flow in JavaScript compared to the Python version of Tensorflow. Memory handling is a tricky but neccessary part of the JavaScript version. WebGL has its own limitations. GPU device can not be targeted directly. In dual GPU notebooks (integrated - dedicated) the dedicated GPU should be set explicitly in the card manufacturer settings.
