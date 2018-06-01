@@ -225,7 +225,9 @@ const learnToGuessWord = async () => {
         return toSymbol(s)
     })
 
-    for (let i = 0; i < 30; i++) {
+    
+
+    for (let i = 0; i < document.getElementById('myWords').value; i++) {
         const predProbVector = predict(tf.tensor(symbolCollector.slice(-examinedNumberOfWord), [1, examinedNumberOfWord, 1]))
         symbolCollector.push(decode(predProbVector));
     }
@@ -240,45 +242,34 @@ const learnToGuessWord = async () => {
    
    
    
-   
-   
-    
-    
-    
 </script>
   </head>
   <body>
-    <h1>RNN-Char</h1>
+    <h1>char-RNN</h1>
     Original for tensorflowjs by <a href="https://github.com/HorvathDavid/LSTM-tensorflowjs-example">David Horvath </a><br><br>
-    Original Char-RNN by<a href="https://github.com/karpathy/char-rnn"> Andrej karpathy </a><br><br>
+    Original Char-RNN by<a href="https://github.com/karpathy/char-rnn"> Andrej Karpathy </a><br><br>
     
-    
-    
-    <button id="start_training">Start training</button>
-    <button id="stop_training">Stop training</button>
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    
-    
-    
-    
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script> var exports = {}; </script>
-   <!-- <script src="index.js"></script>  -->
+
+
     
     <input type=button value="Load" onclick="{
       myPrep()
     
-    }"> 
-    <input type=button value="train" onclick="{
+    }"> <br>
+    <input type=button value="Train" onclick="{
+      stop_training = false
       learnToGuessWord()
     
-    }"> 
-    <input type=button value="Stop and Show" onclick="{
-       stop_training = true
+    }"> <br><br>
     
-    }"> 
+  Output relative amount<input type=number id="myWords" value=30><br>
+    
+    <input type=button value="Stop or Show Again" onclick="{
+       stop_training = true
+       learnToGuessWord()  
+    }"> <br>
     <div id="myDiv01">...</div>
   </body>
 </html>
