@@ -40,7 +40,7 @@
     <script> var exports = {}; </script>
     <script src="index.js"></script>
     
-    Input type=button value="click" onclick="{
+    <input type=button value="click" onclick="{
        alert()
     
     }"> 
