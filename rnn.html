@@ -29,7 +29,7 @@
     <h1>Check the developer console!</h1>
     <button id="start_training">Start training</button>
     <button id="stop_training">Stop training</button>
-    <canvas id="myChart" width="400" height="400"></canvas>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     
@@ -45,11 +45,11 @@
     
     }"> 
     <input type=button value="train" onclick="{
-       alert()
+      learnToGuessWord()
     
     }"> 
     <input type=button value="Stop and Show" onclick="{
-       alert()
+       stop_training = true
     
     }"> 
     <div id="myDiv01">...</div>
