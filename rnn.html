@@ -31,6 +31,8 @@ let stop_training = false
 
 
 // preparing data
+
+asyn function myPrep(){
 const createWordMap = (textData) => {
     const wordArray = textData.split(' ')
     const countedWordObject = wordArray.reduce((acc, cur, i) => {
@@ -54,6 +56,9 @@ const createWordMap = (textData) => {
 
     return wordMap
 }
+
+
+
 
 const wordMap = createWordMap(inputText)
 const wordMapLength = Object.keys(wordMap).length
@@ -131,6 +136,9 @@ const getSamples = () => {
     const startOfSeq = _.random(0, endOfSeq, false)
     const retVal = preparedDataforTestSet.slice(startOfSeq, startOfSeq + (examinedNumberOfWord + 1))
     return retVal
+}
+
+
 }
 
 const train = async (numIterations) => {
