@@ -276,8 +276,9 @@ const learnToGuessWord = async () => {
     
     }"> Seriously takes a while about 50 seconds<br><br>
     
-    Training Iterations: <input type=number id="myIter" style="width:40px" value=1000><br>
-    <input type=button id="myTrainButton" value="Train" onclick="{                                                                                                               
+    Training Iterations: <input type=number id="myIter" style="width:100px" value=1000><br>
+    
+    <input type=button id="myTrainButton" value="Train or Train more" onclick="{                                                                                                               
       document.getElementById('myTrainButton').style.backgroundColor = 'red'  
       stop_training = false
       numIterations = document.getElementById('myIter').value   
