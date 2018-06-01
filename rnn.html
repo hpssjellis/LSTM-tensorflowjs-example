@@ -108,7 +108,7 @@ decode = (probDistVector) => {     // made global
             probIndexes.push(probs.indexOf(prob))
         }
     }
-
+    DonethisFunction = 'decode'
     return probIndexes[_.random(0, probIndexes.length - 1)]
 }
 
@@ -141,12 +141,13 @@ loss = (labels, predictions) => {    // made global
 getSamples = () => {       // made a global variable
     const startOfSeq = _.random(0, endOfSeq, false)
     const retVal = preparedDataforTestSet.slice(startOfSeq, startOfSeq + (examinedNumberOfWord + 1))
+    DonethisFunction = 'getSamples'
     return retVal
 }
 
 
 
-console.log('Doe so far : '+DonethisFunction)
+console.log('Done so far : '+DonethisFunction)
 
 
 }   // end myPrep() function
