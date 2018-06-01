@@ -226,8 +226,8 @@ const learnToGuessWord = async () => {
     })
 
     
-    alert(document.getElementById('myWords').value)
-    for (let i = 0; i < 4; i++) {
+
+    for (let i = 0; i < document.getElementById('myWords').value; i++) {
         const predProbVector = predict(tf.tensor(symbolCollector.slice(-examinedNumberOfWord), [1, examinedNumberOfWord, 1]))
         symbolCollector.push(decode(predProbVector));
     }
@@ -252,7 +252,7 @@ const learnToGuessWord = async () => {
 
     <script> var exports = {}; </script>
 
-    <input type=number id="myWords" value=30><br>
+    Output relative amount<input type=number id="myWords" value=30><br>
     
     <input type=button value="Load" onclick="{
       myPrep()
