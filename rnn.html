@@ -227,7 +227,7 @@ const learnToGuessWord = async () => {
 
     
     alert(document.getElementById('myWords').value
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 4; i++) {
         const predProbVector = predict(tf.tensor(symbolCollector.slice(-examinedNumberOfWord), [1, examinedNumberOfWord, 1]))
         symbolCollector.push(decode(predProbVector));
     }
