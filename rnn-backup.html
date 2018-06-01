@@ -275,13 +275,31 @@ const learnToGuessWord = async () => {
       
     
     }"> Seriously takes a while about 50 seconds<br><br>
-    <input type=button id="myTrainButton" value="Train" onclick="{                                                                                                               
+    
+    Training Iterations: <input type=number id="myIter" style="width:100px" value=1000><br>
+    
+    <input type=button id="myTrainButton" value="Train or Train more" onclick="{                                                                                                               
       document.getElementById('myTrainButton').style.backgroundColor = 'red'  
       stop_training = false
+      numIterations = document.getElementById('myIter').value   
       document.getElementById('myDiv01').innerHTML = 'Training the Data...'
       
       setTimeout(function(){ learnToGuessWord() }, 10);          
     }"> <br><br>
+ 
+    
+    
+    
+     <input type=button  value="Peak" onclick="{                                                                                                                                     
+      stop_training = true
+      document.getElementById('myDiv01').innerHTML = 'Showing the output and continuing to train'                                                                             
+      learnToGuessWord()  
+    }"> <br><br>
+    
+       
+    
+    
+    
     
   Output Batches of 30 Characters: <input type=number id="myWords" style="width:40px" value=50><br>
     
@@ -292,5 +310,13 @@ const learnToGuessWord = async () => {
       numIterations = 0          // my hack to stop it                                                                          
       setTimeout(function(){ learnToGuessWord() }, 10);   
     }"> <br><br>
+    
+    
+    
     <div id="myDiv01">...</div>
+    
+    
+    
+    
   </body>
+</html>
