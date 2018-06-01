@@ -132,7 +132,7 @@ const loss = (labels, predictions) => {
 
 // performance could be improved if toSymbol the whole set
 // then random select from encodings not from string of arrays
-const getSamples = () => {
+getSamples = () => {       // made a global variable
     const startOfSeq = _.random(0, endOfSeq, false)
     const retVal = preparedDataforTestSet.slice(startOfSeq, startOfSeq + (examinedNumberOfWord + 1))
     return retVal
