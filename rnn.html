@@ -285,6 +285,20 @@ const learnToGuessWord = async () => {
       
       setTimeout(function(){ learnToGuessWord() }, 10);          
     }"> <br><br>
+ 
+    
+    
+    
+     <input type=button id="myStopButton" value="Peak" onclick="{                                                                                                                                     
+      stop_training = true
+      document.getElementById('myDiv01').innerHTML = 'Showing the output and continuing to train'                                                                             
+      learnToGuessWord()  
+    }"> <br><br>
+    
+       
+    
+    
+    
     
   Output Batches of 30 Characters: <input type=number id="myWords" style="width:40px" value=50><br>
     
@@ -295,6 +309,13 @@ const learnToGuessWord = async () => {
       numIterations = 0          // my hack to stop it                                                                          
       setTimeout(function(){ learnToGuessWord() }, 10);   
     }"> <br><br>
+    
+    
+    
     <div id="myDiv01">...</div>
+    
+    
+    
+    
   </body>
 </html>
