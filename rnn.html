@@ -249,8 +249,8 @@ const learnToGuessWord = async () => {
 
     console.log(generatedText)
     document.getElementById('myDiv01').innerHTML = generatedText
-    document.getElementById('myTrainButton').style.backgroundColor = 'red' 
-    document.getElementById('myStopButton').style.backgroundColor = 'red' 
+    document.getElementById('myTrainButton').style.backgroundColor = 'lightgray' 
+    document.getElementById('myStopButton').style.backgroundColor = 'lightgray' 
 }  
    
    
@@ -283,7 +283,7 @@ const learnToGuessWord = async () => {
       setTimeout(function(){ learnToGuessWord() }, 10);          
     }"> <br><br>
     
-  Output relative amount <input type=number id="myWords" style="width:50px" value=30><br>
+  Output Batches of 30 Characters: <input type=number id="myWords" style="width:40px" value=30><br>
     
     <input type=button id="myStopButton" value="Stop Training or Show Again" onclick="{                                                                                                                                     
       document.getElementById('myStopButton').style.backgroundColor = 'red'  
