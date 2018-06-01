@@ -1,6 +1,6 @@
-import _ from 'lodash'
-import * as tf from '@tensorflow/tfjs';
-import Chart from 'chart.js';
+//import _ from 'lodash'
+//import * as tf from '@tensorflow/tfjs';
+//import Chart from 'chart.js';
 
 // make tf globally available, debugging purposes
 // window.tf = tf
