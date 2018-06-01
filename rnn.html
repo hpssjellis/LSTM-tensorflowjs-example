@@ -267,8 +267,9 @@ const learnToGuessWord = async () => {
     <input type=button id="myLoadButton" value="Load" onclick="{
                                                                
       document.getElementById('myLoadButton').style.backgroundColor = 'red'            
-      inputText = document.getElementById('myBlurb').value     // Gradb the textarea                                 
-      myPrep()
+      inputText = document.getElementById('myBlurb').value     // Gradb the textarea  
+      setTimeout(function(){ myPrep() }, 10);                                                          
+      
     
     }"> <br><br>
     <input type=button value="Train" onclick="{
