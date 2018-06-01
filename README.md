@@ -1,12 +1,31 @@
 
+Trying to put all of this on one page May 30, 2018
+
 My web at
+
+
+https://hpssjellis.github.io/LSTM-tensorflowjs-example/rnn.html
+
 
 https://hpssjellis.github.io/LSTM-tensorflowjs-example/index.html
 
 
 
 
+.
 
+
+
+
+
+.
+
+
+
+
+
+
+.
 
 
 
