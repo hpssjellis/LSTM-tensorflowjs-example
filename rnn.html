@@ -285,8 +285,9 @@ const learnToGuessWord = async () => {
     
     <input type=button id="myStopButton" value="Stop Training or Show Again" onclick="{                                                                                                                                     
       document.getElementById('myStopButton').style.backgroundColor = 'red'  
-       stop_training = true
-       document.getElementById('myDiv01').innerHTML = 'Showing the Output ...'                                                             
+      stop_training = true
+      document.getElementById('myDiv01').innerHTML = 'Showing the Output ...'      
+      numIterations = 0          // my hack to stop it                                                                          
       setTimeout(function(){ learnToGuessWord() }, 10);   
     }"> <br><br>
     <div id="myDiv01">...</div>
