@@ -178,9 +178,9 @@ const train = async (numIterations) => {
             The average loss is (last 100 steps):  ${lvdsy}
             Number of tensors in memory: ${tf.memory().numTensors}
             --------`)
-            chart.data.datasets[0].data.push(lvdsy)
-            chart.data.labels.push(iter)
-            chart.update()
+          //  chart.data.datasets[0].data.push(lvdsy)
+         //   chart.data.labels.push(iter)
+         //   chart.update()
         }
 
         // Use tf.nextFrame to not block the browser.
@@ -221,7 +221,7 @@ const learnToGuessWord = async () => {
 document.getElementById('start_training').addEventListener('click', learnToGuessWord, { once: true })
 document.getElementById('stop_training').addEventListener('click', () => stop_training = true)
 
-
+/*
 const drawChart = (labelsGot, dataF) => {
     var ctx = document.getElementById("myChart");
     return new Chart(ctx, {
@@ -261,3 +261,6 @@ const drawChart = (labelsGot, dataF) => {
         }
     });
 }
+
+
+*/
