@@ -259,15 +259,16 @@ const learnToGuessWord = async () => {
     
     }"> <br>
     <input type=button value="Train" onclick="{
+      stop_training = false
       learnToGuessWord()
     
     }"> <br><br>
     
   Output relative amount<input type=number id="myWords" value=30><br>
     
-    <input type=button value="Stop and Show" onclick="{
+    <input type=button value="Stop or Show Again" onclick="{
        stop_training = true
-    
+       learnToGuessWord()  
     }"> <br>
     <div id="myDiv01">...</div>
   </body>
