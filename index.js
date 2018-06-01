@@ -9,7 +9,7 @@ const inputText = `long ago , the mice had a general council to consider what me
 // hungarian text
 // const inputText = `Meghiszem azt ! Hallgass csak ide . Amint jövök ki az erdőből , mit látok az út közepén ? Belerekedt a sárba egy kis aranyos kocsi , a kocsi előtt négy szép fekete kutya befogva . A kocsiban olyan szép asszony ült , amilyet világéletemben nem láttam . Biztosan tündér lehetett . Mondja nekem : “ Te jó ember , segíts ki a sárból , bizony nem bánod meg . ” Gondoltam magamban , hogy bizony jólesnék , ha segítene a szegénységünkön , és segítettem , hogy a kutyák kihúzzák a sárból . Kérdi az asszony , hogy házas vagyok-e . Mondom neki , hogy igen . Kérdi , hogy gazdagok vagyunk-e . Mondom neki , hogy bizony szegények vagyunk , mint a templom egere . Azt mondja : “ No , ezen segíthetünk . Mondd meg a feleségednek , hogy kívánjon három dolgot , teljesülni fog a kívánsága . ” Azzal elment , mint a szél .`
 
-const numIterations = 20000
+const numIterations = 300     // 20000
 const learning_rate = 0.001
 const rnn_hidden = 64
 const preparedDataforTestSet = inputText.split(' ')
