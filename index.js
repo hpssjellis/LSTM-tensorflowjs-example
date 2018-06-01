@@ -216,6 +216,7 @@ const learnToGuessWord = async () => {
     }).join(' ')
 
     console.log(generatedText)
+    document.getElementById('myDiv01').innerHTML = generatedText
 }
 
 document.getElementById('start_training').addEventListener('click', learnToGuessWord, { once: true })
