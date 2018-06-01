@@ -148,8 +148,8 @@ getSamples = () => {       // made a global variable
 
 
 console.log('Done so far : '+DonethisFunction)
-
-document.getElementById('myLoadButton').style.backgroundColor = 'lightGrey'    
+document.getElementById('myLoadButton').style.backgroundColor = 'lightGrey'  
+document.getElementById('myDiv01').innerHTML = 'Done Loading Data'
 
 }   // end myPrep() function
 
@@ -274,7 +274,7 @@ const learnToGuessWord = async () => {
       setTimeout(function(){ myPrep() }, 10);                                                          
       
     
-    }"> <br><br>
+    }"> Seriously takes a while about 50 seconds<br><br>
     <input type=button id="myTrainButton" value="Train" onclick="{                                                                                                               
       document.getElementById('myTrainButton').style.backgroundColor = 'red'  
       stop_training = false
