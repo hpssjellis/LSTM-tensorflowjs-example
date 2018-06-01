@@ -29,6 +29,8 @@ const optimizer = tf.train.rmsprop(learning_rate)
 //let chart
 let stop_training = false
 
+DonethisFunction = 'start'
+
 
 // preparing data
 
@@ -90,6 +92,7 @@ encode = (symbol) => {           // made global
     return tf.tidy(() => {
         const symbolTensor1d = tf.tensor1d(symbol)
         return tf.oneHot(symbolTensor1d, wordMapLength)
+      
     })
 }
 
@@ -142,7 +145,11 @@ getSamples = () => {       // made a global variable
 }
 
 
-}
+
+console.log('Doe so far : '+DonethisFunction)
+
+
+}   // end myPrep() function
 
 const train = async (numIterations) => {
 
