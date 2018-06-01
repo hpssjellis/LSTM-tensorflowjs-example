@@ -32,7 +32,7 @@ let stop_training = false
 
 // preparing data
 
-asyn function myPrep(){
+async function myPrep(){
 const createWordMap = (textData) => {
     const wordArray = textData.split(' ')
     const countedWordObject = wordArray.reduce((acc, cur, i) => {
