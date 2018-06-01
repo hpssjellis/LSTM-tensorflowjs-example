@@ -129,7 +129,7 @@ predict = (samples) => {      // made global
     return model.predict(samples)
 }
 
-const loss = (labels, predictions) => {
+loss = (labels, predictions) => {    // made global
     return tf.losses.softmaxCrossEntropy(labels, predictions).mean();
 }
 
