@@ -84,7 +84,7 @@ toSymbol = (word) => {       // made global
 }
 
 // return onehot vector, for compare with probability distribution vector
-const encode = (symbol) => {
+encode = (symbol) => {           // made global
     // console.log(symbol)
     return tf.tidy(() => {
         const symbolTensor1d = tf.tensor1d(symbol)
@@ -93,7 +93,7 @@ const encode = (symbol) => {
 }
 
 // return a symbol
-const decode = (probDistVector) => {
+decode = (probDistVector) => {     // made global
     // It could be swithced to tf.argMax(), but I experiment with values below treshold.
     const probs = probDistVector.softmax().dataSync()
     const maxOfProbs = _.max(probs)
