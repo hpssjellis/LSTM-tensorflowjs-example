@@ -53,7 +53,7 @@ const createWordMap = (textData) => {
         e['code'] = i
         return e
     })
-
+    console.log('myPrep')
     return wordMap
 }
 
@@ -72,6 +72,8 @@ console.log(`
 // return a word
 const fromSymbol = (symbol) => {
     const object = wordMap.filter(e => e.code === symbol)[0]
+    
+
     return object.word
 }
 
