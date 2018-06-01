@@ -207,6 +207,7 @@ const train = async (numIterations) => {
             The average loss is (last 100 steps):  ${lvdsy}
             Number of tensors in memory: ${tf.memory().numTensors}
             --------`)
+          document.getElementById('myDiv01').innerHTML = 'Step:' + iter + ' Loss = ' + lvdsy
 
         }
 
