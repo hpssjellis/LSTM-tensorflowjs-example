@@ -252,19 +252,20 @@ const learnToGuessWord = async () => {
 
     <script> var exports = {}; </script>
 
-    <input type=number id="myWords" value=30>
+    <input type=number id="myWords" value=30><br>
+    
     <input type=button value="Load" onclick="{
       myPrep()
     
-    }"> 
-    <input type=button value="train" onclick="{
+    }"> <br>
+    <input type=button value="Train" onclick="{
       learnToGuessWord()
     
-    }"> 
+    }"> <br>
     <input type=button value="Stop and Show" onclick="{
        stop_training = true
     
-    }"> 
+    }"> <br>
     <div id="myDiv01">...</div>
   </body>
 </html>
