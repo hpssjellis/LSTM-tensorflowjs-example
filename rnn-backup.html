@@ -31,6 +31,8 @@ let stop_training = false
 
 
 // preparing data
+
+async function myPrep(){
 const createWordMap = (textData) => {
     const wordArray = textData.split(' ')
     const countedWordObject = wordArray.reduce((acc, cur, i) => {
@@ -53,7 +55,11 @@ const createWordMap = (textData) => {
     })
 
     return wordMap
+
 }
+
+
+
 
 const wordMap = createWordMap(inputText)
 const wordMapLength = Object.keys(wordMap).length
@@ -65,19 +71,21 @@ console.log(`
 
 
 // return a word
-const fromSymbol = (symbol) => {
+fromSymbol = (symbol) => {  //made global
     const object = wordMap.filter(e => e.code === symbol)[0]
+    
+
     return object.word
 }
 
 // return a symbol
-const toSymbol = (word) => {
+toSymbol = (word) => {       // made global
     const object = wordMap.filter(e => e.word === word)[0]
     return object.code
 }
 
 // return onehot vector, for compare with probability distribution vector
-const encode = (symbol) => {
+encode = (symbol) => {           // made global
     // console.log(symbol)
     return tf.tidy(() => {
         const symbolTensor1d = tf.tensor1d(symbol)
@@ -86,7 +94,7 @@ const encode = (symbol) => {
 }
 
 // return a symbol
-const decode = (probDistVector) => {
+decode = (probDistVector) => {     // made global
     // It could be swithced to tf.argMax(), but I experiment with values below treshold.
     const probs = probDistVector.softmax().dataSync()
     const maxOfProbs = _.max(probs)
@@ -113,24 +121,27 @@ const rnn = tf.layers.rnn({ cell: cells, returnSequences: false });
 const rnn_out = rnn.apply(wordVector);
 const output = tf.layers.dense({ units: wordMapLength, useBias: true }).apply(rnn_out)
 
-const model = tf.model({ inputs: wordVector, outputs: output })
+model = tf.model({ inputs: wordVector, outputs: output })   // madde global
 
 
 // sample shape: [batch, sequence, feature], here is [1, number of words, 1]
-const predict = (samples) => {
+predict = (samples) => {      // made global
     return model.predict(samples)
 }
 
-const loss = (labels, predictions) => {
+loss = (labels, predictions) => {    // made global
     return tf.losses.softmaxCrossEntropy(labels, predictions).mean();
 }
 
 // performance could be improved if toSymbol the whole set
 // then random select from encodings not from string of arrays
-const getSamples = () => {
+getSamples = () => {       // made a global variable
     const startOfSeq = _.random(0, endOfSeq, false)
     const retVal = preparedDataforTestSet.slice(startOfSeq, startOfSeq + (examinedNumberOfWord + 1))
     return retVal
+}
+
+
 }
 
 const train = async (numIterations) => {
@@ -257,7 +268,7 @@ const learnToGuessWord = async () => {
    <!-- <script src="index.js"></script>  -->
     
     <input type=button value="Load" onclick="{
-       alert()
+      myPrep()
     
     }"> 
     <input type=button value="train" onclick="{
