@@ -9,7 +9,7 @@ const inputText = `long ago , the mice had a general council to consider what me
 // hungarian text
 // const inputText = `Meghiszem azt ! Hallgass csak ide . Amint jövök ki az erdőből , mit látok az út közepén ? Belerekedt a sárba egy kis aranyos kocsi , a kocsi előtt négy szép fekete kutya befogva . A kocsiban olyan szép asszony ült , amilyet világéletemben nem láttam . Biztosan tündér lehetett . Mondja nekem : “ Te jó ember , segíts ki a sárból , bizony nem bánod meg . ” Gondoltam magamban , hogy bizony jólesnék , ha segítene a szegénységünkön , és segítettem , hogy a kutyák kihúzzák a sárból . Kérdi az asszony , hogy házas vagyok-e . Mondom neki , hogy igen . Kérdi , hogy gazdagok vagyunk-e . Mondom neki , hogy bizony szegények vagyunk , mint a templom egere . Azt mondja : “ No , ezen segíthetünk . Mondd meg a feleségednek , hogy kívánjon három dolgot , teljesülni fog a kívánsága . ” Azzal elment , mint a szél .`
 
-const numIterations = 500     // 20000
+const numIterations = 200     // 20000
 const learning_rate = 0.001
 const rnn_hidden = 64
 const preparedDataforTestSet = inputText.split(' ')
@@ -178,9 +178,7 @@ const train = async (numIterations) => {
             The average loss is (last 100 steps):  ${lvdsy}
             Number of tensors in memory: ${tf.memory().numTensors}
             --------`)
-          //  chart.data.datasets[0].data.push(lvdsy)
-         //   chart.data.labels.push(iter)
-         //   chart.update()
+
         }
 
         // Use tf.nextFrame to not block the browser.
@@ -196,7 +194,7 @@ const train = async (numIterations) => {
 const learnToGuessWord = async () => {
     console.log('TRAINING START')
 
-   // chart = drawChart([], [])
+
 
     await train(numIterations);
 
@@ -221,46 +219,3 @@ const learnToGuessWord = async () => {
 document.getElementById('start_training').addEventListener('click', learnToGuessWord, { once: true })
 document.getElementById('stop_training').addEventListener('click', () => stop_training = true)
 
-/*
-const drawChart = (labelsGot, dataF) => {
-    var ctx = document.getElementById("myChart");
-    return new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: labelsGot,
-            datasets: [{
-                label: 'LOSS',
-                data: dataF,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-}
-
-
-*/
