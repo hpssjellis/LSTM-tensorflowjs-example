@@ -29,6 +29,8 @@ const optimizer = tf.train.rmsprop(learning_rate)
 //let chart
 let stop_training = false
 
+DonethisFunction = 'start'
+
 
 // preparing data
 
@@ -90,6 +92,7 @@ encode = (symbol) => {           // made global
     return tf.tidy(() => {
         const symbolTensor1d = tf.tensor1d(symbol)
         return tf.oneHot(symbolTensor1d, wordMapLength)
+      
     })
 }
 
@@ -105,7 +108,7 @@ decode = (probDistVector) => {     // made global
             probIndexes.push(probs.indexOf(prob))
         }
     }
-
+    DonethisFunction = 'decode'
     return probIndexes[_.random(0, probIndexes.length - 1)]
 }
 
@@ -138,11 +141,16 @@ loss = (labels, predictions) => {    // made global
 getSamples = () => {       // made a global variable
     const startOfSeq = _.random(0, endOfSeq, false)
     const retVal = preparedDataforTestSet.slice(startOfSeq, startOfSeq + (examinedNumberOfWord + 1))
+    DonethisFunction = 'getSamples'
     return retVal
 }
 
 
-}
+
+console.log('Done so far : '+DonethisFunction)
+
+
+}   // end myPrep() function
 
 const train = async (numIterations) => {
 
@@ -257,14 +265,14 @@ const learnToGuessWord = async () => {
     <input type=button value="Load" onclick="{
       myPrep()
     
-    }"> <br>
+    }"> <br><br>
     <input type=button value="Train" onclick="{
       stop_training = false
       learnToGuessWord()
     
     }"> <br><br>
     
-  Output relative amount<input type=number id="myWords" value=30><br>
+  Output relative amount<input type=number id="myWords" size=4 value=30><br>
     
     <input type=button value="Stop or Show Again" onclick="{
        stop_training = true
