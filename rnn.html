@@ -121,11 +121,11 @@ const rnn = tf.layers.rnn({ cell: cells, returnSequences: false });
 const rnn_out = rnn.apply(wordVector);
 const output = tf.layers.dense({ units: wordMapLength, useBias: true }).apply(rnn_out)
 
-const model = tf.model({ inputs: wordVector, outputs: output })
+model = tf.model({ inputs: wordVector, outputs: output })   // madde global
 
 
 // sample shape: [batch, sequence, feature], here is [1, number of words, 1]
-const predict = (samples) => {
+predict = (samples) => {      // made global
     return model.predict(samples)
 }
 
