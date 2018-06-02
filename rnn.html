@@ -5,7 +5,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10"></script>
 
-    <title>CHAR-RNN</title>
+    <title>CHAR-RNN</title
+      
 
     
  <script>   
@@ -240,7 +241,7 @@ const learnToGuessWord = async () => {
     
 
     for (let i = 0; i < document.getElementById('myWords').value; i++) {
-        const predProbVector = predict(tf.tensor(symbolCollector.slice(-examinedNumberOfWord), [1, examinedNumberOfWord, 1]))
+        const predProbVector = predict(tf.tensor(symbolCollector.slice(-examinedNumberOfWord), [1, examinedNumberOfWord, 1],'int32'))
         symbolCollector.push(decode(predProbVector));
     }
 
