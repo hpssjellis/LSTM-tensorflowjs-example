@@ -46,12 +46,12 @@ const createWordMap = (textData) => {
         return acc
     }, {})
 
-    const arraOfshit = []
+    const arrayWordCount = []
     for (let key in countedWordObject) {
-        arraOfshit.push({ word: key, occurence: countedWordObject[key] })
+        arrayWordCount.push({ word: key, occurence: countedWordObject[key] })
     }
 
-    const wordMap = _.sortBy(arraOfshit, 'occurence').reverse().map((e, i) => {
+    const wordMap = _.sortBy(arrayWordCount, 'occurence').reverse().map((e, i) => {
         e['code'] = i
         return e
     })
@@ -290,10 +290,10 @@ const learnToGuessWord = async () => {
     
     
     
-     <input type=button  value="2 second Peak" onclick="{                                                                                                                                     
+     <input type=button  value="Peak" onclick="{                                                                                                                                     
       stop_training = true
       document.getElementById('myDiv01').innerHTML = 'Showing the output and continuing to train'                                                                             
-      setTimeout(function(){ learnToGuessWord() }, 2000); // wait 2 seconds
+      learnToGuessWord() 
     }"> <br><br>
     
        
