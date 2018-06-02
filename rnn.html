@@ -275,7 +275,7 @@ const learnToGuessWord = async () => {
       setTimeout(function(){ myPrep() }, 10);                                                          
       
     
-    }"> Seriously takes a while about 50 seconds<br><br>
+    }">Can take a while depending on your computer<br><br>
     
     Training Iterations: <input type=number id="myIter" style="width:100px" value=1000><br>
     
@@ -294,7 +294,7 @@ const learnToGuessWord = async () => {
      <input type=button  value="Peak" onclick="{                                                                                                                                     
       stop_training = true
       document.getElementById('myDiv01').innerHTML = 'Showing the output and continuing to train'                                                                             
-      learnToGuessWord()  
+      setTimeout(function(){ learnToGuessWord() }, 2000);    // give 2 seconds to read it
     }"> <br><br>
     
        
