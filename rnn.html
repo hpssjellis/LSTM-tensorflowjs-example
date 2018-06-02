@@ -83,7 +83,7 @@ fromSymbol = (symbol) => {  //made global
 // return a symbol
 toSymbol = (word) => {       // made global
     const object = wordMap.filter(e => e.word === word)[0]
-    console.log(object.code)
+    console.log(typeof object.code)
     return object.code
 }
 
