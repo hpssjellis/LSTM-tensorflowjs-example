@@ -5,8 +5,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10"></script>
 
-    <title>CHAR-RNN</title
-      
+    <title>CHAR-RNN</title>
 
     
  <script>   
@@ -92,7 +91,6 @@ encode = (symbol) => {           // made global
     // console.log(symbol)
     return tf.tidy(() => {
         const symbolTensor1d = tf.tensor1d(symbol)
-        //symbolTensor1d.print(true)
         return tf.oneHot(symbolTensor1d, wordMapLength)
       
     })
