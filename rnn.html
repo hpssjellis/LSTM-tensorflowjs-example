@@ -83,8 +83,8 @@ fromSymbol = (symbol) => {  //made global
 // return a symbol
 toSymbol = (word) => {       // made global
     const object = wordMap.filter(e => e.word === word)[0]
-    console.log(typeof parseInt(object.code))
-    return object.code
+    //console.log(typeof parseInt(object.code))
+    return parseInt(object.code)
 }
 
 // return onehot vector, for compare with probability distribution vector
