@@ -91,6 +91,7 @@ encode = (symbol) => {           // made global
     // console.log(symbol)
     return tf.tidy(() => {
         const symbolTensor1d = tf.tensor1d(symbol)
+        symbolTensor1d.print(true)
         return tf.oneHot(symbolTensor1d, wordMapLength)
       
     })
