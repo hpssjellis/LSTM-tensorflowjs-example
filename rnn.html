@@ -149,7 +149,7 @@ getSamples = () => {       // made a global variable
 
 console.log('Done so far : '+DonethisFunction)
 document.getElementById('myLoadButton').style.backgroundColor = 'lightGrey'  
-document.getElementById('myDiv01').innerHTML = '.............Done Loading Data................'
+document.getElementById('myDiv01').innerHTML = 'Done Loading Data...........................'
 
 }   // end myPrep() function
 
@@ -258,11 +258,10 @@ const learnToGuessWord = async () => {
 </script>
   </head>
   <body>
-    <h1 align=center>char-RNN</h1>
+    <h1>char-RNN</h1>
     Original Char-RNN by<a href="https://github.com/karpathy/char-rnn"> Andrej Karpathy </a><br><br>
-    Which I had a lot of fun with in 2016 making Shakespeare, Music and 3D Printing by <a href="http://rocksetta.com/tensorflow-teacher/3d-print-tensorflow/">Jeremy Ellis</a><br><br>
+    Which I had a lot of fun with in 2016 making Shakespeare, Music and 3D Printing by <a href="http://rocksetta.com/tensorflow-teacher/3d-print-tensorflow/">Jeremy Ellis</a> <br><br>   
     Original for tensorflowjs by <a href="https://github.com/HorvathDavid/LSTM-tensorflowjs-example">David Horvath </a><br><br>
-
     
 
     <script> var exports = {}; </script>
@@ -278,7 +277,7 @@ const learnToGuessWord = async () => {
     
     }"> Can take a while depending on your computer speed<br><br>
     
-    Training Iterations: <input type=number id="myIter" style="width:100px" value=1000> (Original amount was 20000 but that takes a long time)<br><br>
+    Training Iterations: <input type=number id="myIter" style="width:100px" value=1000>(Original was 20000 but that takes a while)<br><br>
     
     <input type=button id="myTrainButton" value="Train or Train more" onclick="{                                                                                                               
       document.getElementById('myTrainButton').style.backgroundColor = 'red'  
@@ -303,7 +302,7 @@ const learnToGuessWord = async () => {
     
     
     
-  Output batches of ~10 characters times: <input type=number id="myWords" style="width:40px" value=50><br>
+  Output Batches of 30 Characters: <input type=number id="myWords" style="width:40px" value=50><br>
     
     <input type=button id="myStopButton" value="Stop Training or Show Again" onclick="{                                                                                                                                     
       document.getElementById('myStopButton').style.backgroundColor = 'red'  
