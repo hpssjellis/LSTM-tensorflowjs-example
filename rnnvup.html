@@ -6,7 +6,6 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10"></script>
 
     <title>CHAR-RNN</title>
-
     
  <script>   
     
@@ -88,7 +87,7 @@ toSymbol = (word) => {       // made global
 encode = (symbol) => {           // made global
     // console.log(symbol)
     return tf.tidy(() => {
-        const symbolTensor1d = tf.tensor1d(symbol)
+        const symbolTensor1d = tf.tensor1d(symbol, 'float32')
         return tf.oneHot(symbolTensor1d, wordMapLength)
       
     })
@@ -186,7 +185,7 @@ const train = async (numIterations) => {
         // loss.
         lossValue = optimizer.minimize(() => {
             // Feed the examples into the model
-            samplesTensor = tf.tensor(samples, [1, examinedNumberOfWord, 1], 'int32')
+            samplesTensor = tf.tensor(samples, [1, examinedNumberOfWord, 1])
             pred = predict(samplesTensor);
             losse = loss(labelProbVector, pred);
             return losse
