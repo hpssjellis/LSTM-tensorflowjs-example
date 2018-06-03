@@ -164,7 +164,7 @@ const train = async (numIterations) => {
         let samplesTensor
 
         const samples = getSamples().map(s => {
-            return parseInt(toSymbol(s))
+            return toSymbol(s)
         })
 
         labelProbVector = encode(samples.splice(-1))
@@ -186,7 +186,7 @@ const train = async (numIterations) => {
         // loss.
         lossValue = optimizer.minimize(() => {
             // Feed the examples into the model
-            samplesTensor = tf.tensor(samples, [1, examinedNumberOfWord, 1], 'int32')
+            samplesTensor = tf.tensor(samples, [1, examinedNumberOfWord, 1])
             pred = predict(samplesTensor);
             losse = loss(labelProbVector, pred);
             return losse
@@ -237,7 +237,7 @@ const learnToGuessWord = async () => {
     
 
     for (let i = 0; i < document.getElementById('myWords').value; i++) {
-        const predProbVector = predict(tf.tensor(symbolCollector.slice(-examinedNumberOfWord), [1, examinedNumberOfWord, 1]), 'int32')
+        const predProbVector = predict(tf.tensor(symbolCollector.slice(-examinedNumberOfWord), [1, examinedNumberOfWord, 1]))
         symbolCollector.push(decode(predProbVector));
     }
 
