@@ -12,6 +12,14 @@ https://hpssjellis.github.io/LSTM-tensorflowjs-example/index.html
 
 
 
+trying above version 9.1
+
+
+https://hpssjellis.github.io/LSTM-tensorflowjs-example/rnnvup.html
+
+
+
+
 .
 
 
