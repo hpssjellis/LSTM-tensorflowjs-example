@@ -80,7 +80,7 @@ fromSymbol = (symbol) => {  //made global
 // return a symbol
 toSymbol = (word) => {       // made global
     const object = wordMap.filter(e => e.word === word)[0]
-    return parseInt(object.code)
+    return object.code
 }
 
 // return onehot vector, for compare with probability distribution vector
@@ -126,6 +126,7 @@ model = tf.model({ inputs: wordVector, outputs: output })   // madde global
 
 // sample shape: [batch, sequence, feature], here is [1, number of words, 1]
 predict = (samples) => {      // made global
+    samples[0] = parseInt(samples[0])
     return model.predict(samples)
 }
 
