@@ -18,6 +18,11 @@ trying above version 9.1
 https://hpssjellis.github.io/LSTM-tensorflowjs-example/rnnvup.html
 
 
+trying to understand it
+
+https://hpssjellis.github.io/LSTM-tensorflowjs-example/rnn-log.html
+
+
 
 
 .
