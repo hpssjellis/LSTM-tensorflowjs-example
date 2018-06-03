@@ -189,7 +189,7 @@ const train = async (numIterations) => {
           console.log(typeof samples[0])
           console.log(examinedNumberOfWord)
             samplesTensor = tf.tensor(samples, [1, examinedNumberOfWord, 1], 'int32')
-          samplesTensor.print()
+          samplesTensor.print(true)
             pred = predict(samplesTensor);
             losse = loss(labelProbVector, pred);
             return losse
