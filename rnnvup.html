@@ -87,7 +87,7 @@ toSymbol = (word) => {       // made global
 encode = (symbol) => {           // made global
     // console.log(symbol)
     return tf.tidy(() => {
-        const symbolTensor1d = tf.tensor1d(symbol, 'float32')
+        const symbolTensor1d = tf.tensor1d(symbol, 'int32')
         return tf.oneHot(symbolTensor1d, wordMapLength)
       
     })
@@ -236,7 +236,7 @@ const learnToGuessWord = async () => {
     
 
     for (let i = 0; i < document.getElementById('myWords').value; i++) {
-        const predProbVector = predict(tf.tensor(symbolCollector.slice(-examinedNumberOfWord), [1, examinedNumberOfWord, 1]))
+        const predProbVector = predict(tf.tensor(symbolCollector.slice(-examinedNumberOfWord), [1, examinedNumberOfWord, 1]), 'int32')
         symbolCollector.push(decode(predProbVector));
     }
 
