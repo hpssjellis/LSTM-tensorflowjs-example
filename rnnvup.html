@@ -234,12 +234,12 @@ const learnToGuessWord = async () => {
         return toSymbol(s)
     })
 
-    
+         console.log(symbolCollector.slice(-examinedNumberOfWord))
+      colsole.log( [1, examinedNumberOfWord, 1]) 
 
 
     for (let i = 0; i < document.getElementById('myWords').value; i++) {
-      console.log(symbolCollector.slice(-examinedNumberOfWord))
-      colsole.log( [1, examinedNumberOfWord, 1])
+
         const predProbVector = predict(tf.tensor(symbolCollector.slice(-examinedNumberOfWord), [1, examinedNumberOfWord, 1]))
         symbolCollector.push(decode(predProbVector));
     }
